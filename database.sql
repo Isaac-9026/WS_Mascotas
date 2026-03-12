@@ -1,3 +1,4 @@
+-- Active: 1773331954235@@127.0.0.1@3306@dbmascotas
 CREATE DATABASE dbmascotas;
 
 USE dbmascotas;

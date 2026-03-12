@@ -41,7 +41,7 @@ app.post('/mascotas',(req, res) => {
     db.query(sql, [tipo, nombre, color, pesokg], (err, results) => {
         if (err) {
             return res.status(500).send({
-                succes: false,
+                success: false,
                 message: 'No se concretó el registro'
             })
         }
@@ -101,20 +101,20 @@ app.delete('/mascotas/:id',(req, res) => {
         //Cláusula de GUARDA / retorno temprano
         if (err){
             res.status(500).send({
-                succes: false,
+                success: false,
                 message: 'No se puede eliminar el registro'
             })
         }
         
         if (results.affectedRows == 0){
             return res.status(404).send({
-                succes: false,
+                success: false,
                 message: "No existe la mascota"
             })
         }
         
         return res.send({
-            succes: true,
+            success: true,
             rows: results.affectedRows,
             message: 'Eliminado correctamente'
         })
